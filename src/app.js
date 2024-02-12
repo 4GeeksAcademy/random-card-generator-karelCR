@@ -4,8 +4,7 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
-
-window.onload = function() {
+function generateCard() {
   function giveResultSymbol(randomSymbol) {
     switch (randomSymbol) {
       case 1:
@@ -34,39 +33,39 @@ window.onload = function() {
   function giveJackSymbol(randomSymbol) {
     switch (randomSymbol) {
       case 1:
-        return "Jack of hearts";
+        return '<img src="../src/assets/img/cards/JACK_OF_HEARTS.png" class="nobility" alt="Caballero de corazones" />';
       case 2:
-        return "Jack of spades";
+        return '<img src="../src/assets/img/cards/JACK_OF_SPADES.png" class="nobility" alt="Caballero de corazones" />';
       case 3:
-        return "Jack of diamonds";
+        return '<img src="../src/assets/img/cards/JACK_OF_DIAMONDS.png" class="nobility" alt="Caballero de corazones" />';
       case 4:
-        return "Jack of clubs";
+        return '<img src="../src/assets/img/cards/JACK_OF_CLUBS.png" class="nobility" alt="Caballero de corazones" />';
     }
   }
 
   function giveQueenSymbol(randomSymbol) {
     switch (randomSymbol) {
       case 1:
-        return '<img src="../src/assets/img/queen-hearts-card.png" class="nobility" alt="Reina de corazones" />';
+        return '<img src="../src/assets/img/cards/QUEEN_OF_HEARTS.png" class="nobility" alt="Reina de corazones" />';
       case 2:
-        return "Queen of spades";
+        return '<img src="../src/assets/img/cards/QUEEN_OF_SPADES.png" class="nobility" alt="Reina de espadas" />';
       case 3:
-        return "Queen of diamonds";
+        return '<img src="../src/assets/img/cards/QUEEN_OF_DIAMONDS.png" class="nobility" alt="Reina de diamantes" />';
       case 4:
-        return "Queen of clubs";
+        return '<img src="../src/assets/img/cards/QUEEN_OF_CLUBS.png" class="nobility" alt="Reina de treboles" />';
     }
   }
 
   function giveKingSymbol(randomSymbol) {
     switch (randomSymbol) {
       case 1:
-        return "King of hearts";
+        return '<img src="../src/assets/img/cards/KING_OF_HEARTS.png" class="nobility" alt="Rey de corazones" />';
       case 2:
-        return "King of spades";
+        return '<img src="../src/assets/img/cards/KING_OF_SPADES.png" class="nobility" alt="Rey de corazones" />';
       case 3:
-        return "King of diamonds";
+        return '<img src="../src/assets/img/cards/KING_OF_DIAMONDS.png" class="nobility" alt="Rey de corazones" />';
       case 4:
-        return "King of clubs";
+        return '<img src="../src/assets/img/cards/KING_OF_CLUBS.png" class="nobility" alt="Rey de corazones" />';
     }
   }
 
@@ -80,18 +79,24 @@ window.onload = function() {
   let valueResult = giveResultValue(randomCardValue, randomSymbol);
 
   document.querySelector("#card").innerHTML = `
-  
-        <img
-          src="${symbolResult}"
-          class="symbol top-left"
-        />
 
-        <div><h1>${valueResult}</h1></div>
+      <img
+        src="${symbolResult}"
+        class="symbol top-left"
+      />
 
-        <img
-          src="${symbolResult}"
-          class="bottom-right symbol"
-        />
-      
-  `;
+      <div><h1>${valueResult}</h1></div>
+
+      <img
+        src="${symbolResult}"
+        class="bottom-right symbol"
+      />
+    
+`;
+}
+window.onload = function() {
+  generateCard();
+};
+window.myEventListener = function myEventListener() {
+  generateCard();
 };
