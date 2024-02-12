@@ -5,6 +5,7 @@ body {
 .card {
   width: 150px;
   height: 200px;
+  border-radius: 10px;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
   border: 1px solid #000;
   margin: 10px;
@@ -12,6 +13,7 @@ body {
   justify-content: space-around;
 }
 .symbol {
+  display: block;
   position: absolute;
   width: 34px;
   height: 30px;
@@ -27,7 +29,11 @@ body {
   transform: rotate(180deg);
 }
 .nobility {
-  width: 100px;
-  height: 150px;
+  margin-top: 5px;
+  width: 150px;
+  height: 200px;
   background-size: cover;
+}
+.myClass {
+  border: 1px black transparent;
 }
