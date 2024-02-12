@@ -39,7 +39,6 @@ function compareCardValueAndGiveImageValue(randomCardValue, randomSymbol) {
       return randomCardValue;
   }
 }
-
 function generateCard() {
   const randomSymbol = Math.round(Math.random() * 3);
   const randomCardValue = Math.round(Math.random() * 13);
@@ -49,20 +48,32 @@ function generateCard() {
     symbolResult
   );
   console.log("Este es el symbolResult: " + symbolResult, randomSymbol);
-  document.querySelector("#card").innerHTML = `
+  if (
+    randomCardValue === 11 ||
+    randomCardValue === 12 ||
+    randomCardValue === 13
+  ) {
+    document.querySelector("#card").innerHTML = `
 
-      <img
-        src="../src/assets/img/${symbolResult}.png"
-        class="symbol top-left"
-      />
+    <div><h1>${valueResult}</h1></div>
 
-      <div><h1>${valueResult}</h1></div>
+  `;
+  } else {
+    document.querySelector("#card").innerHTML = `
 
-      <img
+    <img
       src="../src/assets/img/${symbolResult}.png"
-        class="bottom-right symbol"
-      />
-    `;
+      class="myClass symbol top-left"
+    />
+
+    <div><h1>${valueResult}</h1></div>
+
+    <img
+    src="../src/assets/img/${symbolResult}.png"
+      class="myClass bottom-right symbol"
+    />
+  `;
+  }
 }
 window.onload = function() {
   generateCard();
