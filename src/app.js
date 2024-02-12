@@ -47,7 +47,7 @@ window.onload = function() {
   function giveQueenSymbol(randomSymbol) {
     switch (randomSymbol) {
       case 1:
-        return '<img src="../src/assets/img/queen-hearts-card.png" class="nobility" alt="Reina de corazones"';
+        return '<img src="../src/assets/img/queen-hearts-card.png" class="nobility" alt="Reina de corazones" />';
       case 2:
         return "Queen of spades";
       case 3:
