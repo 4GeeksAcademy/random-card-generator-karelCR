@@ -1,1 +1,33 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: green;
+}
+.card {
+  width: 150px;
+  height: 200px;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  margin: 10px;
+  overflow: hidden;
+  justify-content: space-around;
+}
+.symbol {
+  position: absolute;
+  width: 34px;
+  height: 30px;
+  background-size: cover;
+}
+.top-left {
+  top: 5px;
+  left: 5px;
+}
+.bottom-right {
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(180deg);
+}
+.nobility {
+  width: 157px;
+  height: 150px;
+  background-size: cover;
+}
