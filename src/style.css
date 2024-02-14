@@ -29,7 +29,6 @@ body {
   transform: rotate(180deg);
 }
 .nobility {
-  margin-top: 5px;
   width: 150px;
   height: 200px;
   background-size: cover;
