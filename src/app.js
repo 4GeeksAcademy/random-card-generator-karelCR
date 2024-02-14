@@ -66,6 +66,7 @@ function generateAndCompareRandomValuesForCard() {
 }
 //Esta es la funcion para establecer un ancho y un alto en la carta
 function resizeCard() {
+
   let newHeight = parseInt(document.getElementById("floatingHeight").value);
   let newWidth = parseInt(document.getElementById("floatingWidth").value);
   let card = document.getElementById("card");
@@ -77,6 +78,7 @@ function resizeCard() {
     image.style.width = newWidth + "px";
     image.style.height = newHeight + "px";
   }
+
 }
 window.onload = function() {
   generateHtmlCard(generateAndCompareRandomValuesForCard());
