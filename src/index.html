@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Random Card Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -24,7 +24,7 @@
       <button
         id="myButton"
         class="btn btn-secondary"
-        onclick="myEventListener()"
+        onclick="generateCardButtonListener()"
       >
         Generate a new card
       </button>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <button onclick="myEventListener2()" class="btn btn-secondary">
+      <button onclick="resizeCardButtonListener()" class="btn btn-secondary">
         Resize Card
       </button>
     </div>
