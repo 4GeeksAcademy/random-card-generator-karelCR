@@ -28,10 +28,8 @@ body {
   right: 5px;
   transform: rotate(180deg);
 }
-.nobility {
+#special-card {
+  min-width: 150px;
+  min-height: 200px;
   width: 100%;
-  background-size: cover;
-}
-.myClass {
-  border: 1px black transparent;
 }
