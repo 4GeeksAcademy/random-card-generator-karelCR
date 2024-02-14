@@ -87,11 +87,11 @@ function resizeCard() {
   var newWidth = parseInt(document.getElementById("floatingWidth").value);
 
   // Get the image element
-  var image = document.getElementById("card");
+  var card = document.getElementById("card");
 
   // Set the new height and width
-  image.style.height = newHeight + "px";
-  image.style.width = newWidth + "px";
+  card.style.height = newHeight + "px";
+  card.style.width = newWidth + "px";
 }
 
 window.onload = function() {
