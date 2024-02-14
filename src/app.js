@@ -13,11 +13,10 @@ function startCountdown() {
   // eliminamos un numero
   countdownValue--;
 
-  // Check if countdown reaches 0
+  // Si es 0 entonces llamamos a las funciones para generar una nueva carta
   if (countdownValue < 0) {
     countdownElement.innerHTML = "Ahora!";
-    let resultsArray = generateAndCompareRandomValuesForCard();
-    generateHtmlCard(resultsArray);
+    generateHtmlCard(generateAndCompareRandomValuesForCard());
     countdownValue = 10;
   }
 }
@@ -29,7 +28,7 @@ function giveResultSymbol(randomSymbol) {
   return symbols[randomSymbol];
 }
 
-function compareNumberAndGiveImage(randomCardValue, randomSymbol) {
+function compareNumberAndGiveImageOrNumber(randomCardValue, randomSymbol) {
   switch (randomCardValue) {
     case 1:
       return `<img src="../src/assets/img/cards/${randomSymbol}_A.png" class="nobility" alt="As of ${randomSymbol}" />`;
@@ -75,17 +74,32 @@ function generateAndCompareRandomValuesForCard() {
   const randomCardValue = Math.round(Math.random() * 12) + 1;
   let symbolResult = giveResultSymbol(randomSymbol);
   //Si el valor es un 1,11,12,13 devolverá una imagen, caso contrario, un numero.
-  let valueResult = compareNumberAndGiveImage(randomCardValue, symbolResult);
+  let valueResult = compareNumberAndGiveImageOrNumber(
+    randomCardValue,
+    symbolResult
+  );
   return [valueResult, symbolResult];
 }
 
+function resizeCard() {
+  // Get the input values
+  var newHeight = parseInt(document.getElementById("floatingHeight").value);
+  var newWidth = parseInt(document.getElementById("floatingWidth").value);
+
+  // Get the image element
+  var image = document.getElementById("card");
+
+  // Set the new height and width
+  image.style.height = newHeight + "px";
+  image.style.width = newWidth + "px";
+}
+
 window.onload = function() {
-  //Definimos un array, en el resultado del array llamamos a la funcion que generara valores aleatorios de una carta
-  const resultsArray = generateAndCompareRandomValuesForCard();
-  //llamamos a la funcion que creara una carta nueva usando el DOM
-  generateHtmlCard(resultsArray);
+  generateHtmlCard(generateAndCompareRandomValuesForCard());
 };
 window.myEventListener = function myEventListener() {
-  const resultsArray = generateAndCompareRandomValuesForCard();
-  generateHtmlCard(resultsArray);
+  generateHtmlCard(generateAndCompareRandomValuesForCard());
+};
+window.myEventListener2 = function myEventListener2() {
+  resizeCard();
 };
