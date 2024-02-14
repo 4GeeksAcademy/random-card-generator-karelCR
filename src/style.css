@@ -29,8 +29,7 @@ body {
   transform: rotate(180deg);
 }
 .nobility {
-  width: 150px;
-  height: 200px;
+  width: 100%;
   background-size: cover;
 }
 .myClass {
